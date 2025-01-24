@@ -297,9 +297,8 @@ def livingroom(first):
         time.sleep(2)
         print("A kitchen, a bathroom, a guest room, they have it all.")
         time.sleep(2)
-    else:
-        print("The warm fire and 'friend' is nice to have.")
-        time.sleep(2)
+    print("The warm fire and 'friend' is nice to have.")
+    time.sleep(2)
     print("What should you do?")
     time.sleep(1)
     print(" 1. Talk with the... thing.")
@@ -361,7 +360,13 @@ def livingroom(first):
             print("   'Can be used as bait.'")
             print("2. Meat hook - 25 blood")
             print("   'Can be used to deter pests.'")
-            print("3. ")
+            print("3. Impish Cat - 75 blood")
+            print("   'More efficient at deterring pests and doesn't break.'")
+            time.sleep(1)
+            while True:
+                decision=input(">")
+                if decision=="n".casefold:
+                    print("'Good day.'")
         elif decision==2:
             print("Haiiii")
         elif decision==3:

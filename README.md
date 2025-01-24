@@ -1,2 +1,2 @@
-### Play a Game
-#### Take a Chance
+## Play a Game
+### Take a Chance

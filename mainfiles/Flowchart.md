@@ -12,8 +12,12 @@
    1. Y will cause a game over.
    2. N will simply leave the closet.
 #### "What should you do?" (Living Room)
-1. 
-2. 
-3. 
-4. 
-5. 
+1. Open's the "Friends" shop, where you can buy things for blood
+2. Kitchen
+3. Bathroom
+4. Guest Room
+5. Fireplace
+6. Attempting to enter the start room again shows that its seemingly been replaced.
+print(" 4. Check the guest room.")
+time.sleep(1)
+print(" 5. Stay by the fireplace.")

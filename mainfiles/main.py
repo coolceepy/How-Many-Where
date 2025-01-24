@@ -193,6 +193,8 @@ def startroom(first,crowbar):
         if decision=="1":
             if crowbar==True:
                 print("You pryed open the door with the crowbar you found and go through.")
+                time.sleep(1)
+                print("Barely, though. The crowbar breaks in use.")
                 time.sleep(3)
                 livingroom(True)
             else:
@@ -313,7 +315,7 @@ def livingroom(first):
     time.sleep(1)
     while True:
         decision=input(">")
-        if decision==1:
+        if decision=="1": #Shop
             print("You approach the creature on the couch.")
             time.sleep(2)
             clearscreen()
@@ -360,21 +362,40 @@ def livingroom(first):
             print("   'Can be used as bait.'")
             print("2. Meat hook - 25 blood")
             print("   'Can be used to deter pests.'")
-            print("3. Impish Cat - 75 blood")
-            print("   'More efficient at deterring pests and doesn't break.'")
-            time.sleep(1)
-            while True:
-                decision=input(">")
-                if decision=="n".casefold:
-                    print("'Good day.'")
+            print("3. ")
         elif decision==2:
             print("Haiiii")
-        elif decision==3:
+        elif decision=="4":
             print("Haiiii")
-        elif decision==4:
+        elif decision=="5":
             print("Haiiii")
-        elif decision==5:
-            print("Haiiii")
+        elif decision=="6": #Notice you can't go back
+            print("You try to enter the room again, but the door seemingly repaired.")
+            time.sleep(1)
+            door=r"""
+.._|      | `-.  | `.  -_-_ _-_  _-  _- -_ -  .'|   |.'|     |  _..
+   `-.._  |    |`!  |`.  -_ -__ -_ _- _-_-  .'  |.;'   |   _.!-'|  
+      | `-!._  |  `;!  ;. _______________ ,'| .-' |   _!.i'     |  
+..__  |     |`-!._ | `.| |_______________||."'|  _!.;'   |     _|..
+   |``"..__ |    |`";.| i|_|MMMMMMMMMMM|_|'| _!-|   |   _|..-|'    
+   |      |``--..|_ | `;!|l|MMoMMMMoMMM|1|.'j   |_..!-'|     |     
+   |      |    |   |`-,!_|_|MMMMP'YMMMM|_||.!-;'  |    |     |     
+___|______|____!.,.!,.!,!|d|MMMo * loMM|p|,!,.!.,.!..__|_____|_____
+      |     |    |  |  | |_|MMMMb,dMMMM|_|| |   |   |    |      |  
+      |     |    |..!-;'i|r|MPYMoMMMMoM|r| |`-..|   |    |      |  
+      |    _!.-j'  | _!,"|_|M)(MMMMoMMM|_||!._|  `i-!.._ |      |  
+     _!.-'|    | _."|  !;|1|MbdMMoMMMMM|l|`.| `-._|    |``-.._  |  
+..-i'     |  _.''|  !-| !|_|MMMoMMMMoMM|_|.|`-. | ``._ |     |``"..
+   |      |.|    |.|  !| |u|MoMMMMoMMMM|n||`. |`!   | `".    |     
+   |  _.-'  |  .'  |.' |/|_|MMMMoMMMMoM|_|! |`!  `,.|    |-._|     
+  _!"'|     !.'|  .'| .'|[@]MMMMMMMMMMM[@] \|  `. | `._  |   `-._  
+-'    |   .'   |.|  |/| /                 \|`.  |`!    |.|      |`-
+      |_.'|   .' | .' |/                   \  \ |  `.  | `._    |  
+     .'   | .'   |/|  /                     \ |`!   |`.|    `.  |  
+  _.'     !'|   .' | /                       \|  `  |  `.    |`.|  
+"""
+            time.sleep(5)
+            livingroom(False)
         else:
             print("Not sure what that means.")
 

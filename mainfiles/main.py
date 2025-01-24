@@ -145,7 +145,7 @@ def menu():
     clearscreen()
     print("...")
     time.sleep(2)
-    print("...Where am I?")
+    print("....Where am I?")
     time.sleep(3)
     while True:
         print("Get up?")
@@ -164,7 +164,7 @@ def menu():
         else:
             print("...What?")
             time.sleep(1)
-def startroom(first):
+def startroom(first,crowbar):
     clearscreen()
     if first==True:
         print("You were on the ground of a tiled room with concrete walls.")
@@ -190,7 +190,7 @@ def startroom(first):
     time.sleep(1)
     while True:
         decision=input(">")
-        if decision==1:
+        if decision=="1":
             if crowbar==True:
                 print("You pryed open the door with the crowbar you found and go through.")
                 time.sleep(3)
@@ -199,7 +199,7 @@ def startroom(first):
                 print("It's locked from the outside. I need a tool to open it.")
                 time.sleep(1)
                 startroom(False)
-        elif decision==2:
+        elif decision=="2":
             print("The phone on the dresser has a small note next to it.")
             time.sleep(1)
             print("Read it?")
@@ -218,7 +218,7 @@ def startroom(first):
                 startroom(False)
             else:
                 print("...I'll take that as a no.")
-        elif decision==3:
+        elif decision=="3":
             print("You take a step into the dark, open closet...")
             time.sleep(3)
             clearscreen()
@@ -379,6 +379,7 @@ def livingroom(first):
             print("Not sure what that means.")
 
 # Everything below here is where the actual game is
+clearscreen()
 name=intro()
 menu()
 today=datetime.date.today()

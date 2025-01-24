@@ -1,18 +1,18 @@
 # Modules
 import os #Funky console clearing stuff
 import random #RNG
-import datetime #You'll see
+import datetime #"[Name] has gone missing."
 import time #Suspense/To look nice
 
 #Functions
 def clearscreen(): #Clears output console
     os.system('cls' if os.name == 'nt' else 'clear')
-def intro(): #Takes name
+def intro(): #Takes name and consent
     print("Hello.")
     time.sleep(1)
     print("What is your first name?")
     time.sleep(1)
-    name=(input(">")).capitalize()
+    name=((input(">")).capitalize()).strip()
     print(str(name)+". What a lovely name.")
     time.sleep(2)
     print("This game will use a Y/N system, as well as typing numbers.")
@@ -60,7 +60,7 @@ def gameover(howmany,where): #When you die
     time.sleep(.5)
     print()
     exit("Please dial "+str(where)+" with the error code.")
-def menu():
+def menu(): #Actual intro
     menu_art1=r'''                           (   )
                           (    )
                            (    )
@@ -164,7 +164,7 @@ def menu():
         else:
             print("...What?")
             time.sleep(1)
-def startroom(first,crowbar):
+def startroom(first,crowbar): #A tutorial of sorts
     clearscreen()
     if first==True:
         print("You were on the ground of a tiled room with concrete walls.")
@@ -284,7 +284,7 @@ def startroom(first,crowbar):
                     gameover(12113211, 43806818)
         else:
             print("Not sure what that means.")
-def livingroom(first):
+def livingroom(first): #Main room
     clearscreen()
     if first==True:
         print("You enter a large, warmly lit living room.")

@@ -146,6 +146,10 @@ def menu(): #Actual intro
     clearscreen()
     print("...")
     time.sleep(2)
+    clearscreen()
+    print("....")
+    time.sleep(0.5)
+    clearscreen()
     print("....Where am I?")
     time.sleep(3)
     while True:

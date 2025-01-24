@@ -10,9 +10,10 @@ def clearscreen(): #Clears output console
 def intro(): #Takes name and consent
     print("Hello.")
     time.sleep(1)
-    print("What is your first name?")
+    print("What is your name?")
     time.sleep(1)
-    name=((input(">")).capitalize()).strip()
+    name=input(">").capitalize()
+    name=name.strip()
     print(str(name)+". What a lovely name.")
     time.sleep(2)
     print("This game will use a Y/N system, as well as typing numbers.")
@@ -199,8 +200,8 @@ def startroom(first,crowbar): #A tutorial of sorts
                 livingroom(True)
             else:
                 print("It's locked from the outside. I need a tool to open it.")
-                time.sleep(1)
-                startroom(False)
+                time.sleep(3)
+                startroom(False,False)
         elif decision=="2":
             print("The phone on the dresser has a small note next to it.")
             time.sleep(1)
@@ -214,10 +215,10 @@ def startroom(first,crowbar): #A tutorial of sorts
                 print("'What to press is last.'")
                 time.sleep(1)
                 print("What could that mean..?")
-                time.sleep(10)
-                startroom(False)
+                time.sleep(7.5)
+                startroom(False,crowbar)
             elif decision=="n".casefold():
-                startroom(False)
+                startroom(False,crowbar)
             else:
                 print("...I'll take that as a no.")
         elif decision=="3":
@@ -226,9 +227,9 @@ def startroom(first,crowbar): #A tutorial of sorts
             clearscreen()
             time.sleep(1)
             print("˙˙˙ʇɥƃᴉɹ lǝǝɟ ʇ,usǝop ʇǝsolɔ ʞɹɐp sᴉɥ┴")
-            time.sleep(1)
+            time.sleep(3)
             print("¿ʇɐɥʇ s,ʇɐɥʍ 'ʇᴉɐM")
-            time.sleep(1)
+            time.sleep(2)
             if crowbar==False:
                 print("You obtained [CROWBAR]")
                 time.sleep(0.5)
@@ -249,31 +250,32 @@ def startroom(first,crowbar): #A tutorial of sorts
 ⠀⣾⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠛⠛⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 '''
+                print(crowbart)
                 time.sleep(5)
                 print("˙˙˙lnɟǝsn ǝq ll,sᴉɥ┴")
                 time.sleep(3)
                 print("˙ɥƃnoɥʇ ʇǝsolɔ sᴉɥʇ ɟo ʇno ʇǝƃ oʇ pǝǝu I˙˙˙")
                 time.sleep(5)
-                startroom(False)
+                startroom(False,True)
             else:
-                time.sleep(2)
-                print("˙ɹǝƃuol ɥɔnɯ ǝɹǝɥ uᴉ ʎɐʇs plnoɥs I ʞuᴉɥʇ ʇ,uop I˙˙˙")
                 time.sleep(1)
+                print("˙ɹǝƃuol ɥɔnɯ ǝɹǝɥ uᴉ ʎɐʇs plnoɥs I ʞuᴉɥʇ ʇ,uop I˙˙˙")
+                time.sleep(3)
                 print("¿ʇǝsolɔ ǝɥʇ ǝʌɐǝl I plnoɥS")
                 time.sleep(1)
                 decision=input("<")
-                if decision=="y".casefold():
-                    print("˙˙˙ǝɹǝɥʇ s,ʇɐɥʍ ʇno ǝʞɐɯ oʇ ƃuᴉʎɹʇ ʇǝsolɔ ǝɥʇ uᴉ ʎɐʇs I")
-                    time.sleep(1)
+                if decision=="n".casefold():
+                    print("˙˙˙ǝɹǝɥʇ s,ʇɐɥʍ ʇno ǝʞɐɯ oʇ ƃuᴉʎɹʇ ʇǝsolɔ ǝɥʇ uᴉ ʎɐʇs ǝM")
+                    time.sleep(2)
                     print("˙˙˙ʇᴉɐM")
-                    time.sleep(3)
+                    time.sleep(5)
                     print("˙˙˙˙˙ou ɥO ˙˙ɥO")
-                    time.sleep(0.5)
+                    time.sleep(1)
                     gameover(12113211, 43806818)
-                elif decision=="n".casefold():
+                elif decision=="y".casefold():
                     print("˙ʇǝsolɔ ǝƃuɐɹʇs ǝɥʇ ǝʌɐǝl ǝM")
                     time.sleep(3)
-                    startroom(False)
+                    startroom(False,crowbar)
                 else:
                     print("¿ʞuᴉɥʇ oʇ ǝɯᴉʇ ǝɹǝɥʇ sI")
                     time.sleep(1)
@@ -406,6 +408,6 @@ today=datetime.date.today()
 menu()
 crowbar=False
 blood=100
-startroom(True)
+startroom(True,False)
 if blood<1:
     gameover(221211131132,531370872125)

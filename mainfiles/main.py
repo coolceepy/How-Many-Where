@@ -1,12 +1,13 @@
-# These first ones are the functions/modules
+# Modules
 import os #Funky console clearing stuff
 import random #RNG
 import datetime #You'll see
 import time #Suspense/To look nice
 
-def clearscreen():
+#Functions
+def clearscreen(): #Clears output console
     os.system('cls' if os.name == 'nt' else 'clear')
-def intro():
+def intro(): #Takes name
     print("Hello.")
     time.sleep(1)
     print("What is your first name?")
@@ -32,7 +33,7 @@ def intro():
             exit()
         else:
             print("Remember, Y/N system.")
-def gameover(howmany,where):
+def gameover(howmany,where): #When you die
     clearscreen()
     time.sleep(5)
     print("...Silence.")

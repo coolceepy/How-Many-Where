@@ -1,5 +1,5 @@
 # How Many, Where? Flowchart
-"Would you like to play?"
+#### "Would you like to play?"
 1. Picking N will exit the program.
 2. Picking Y will continue to the actual game.
 #### "Get up?"

@@ -402,8 +402,8 @@ ___|______|____!.,.!,.!,!|d|MMMo * loMM|p|,!,.!.,.!..__|_____|_____
 # Everything below here is where the actual game is
 clearscreen()
 name=intro()
-menu()
 today=datetime.date.today()
+menu()
 crowbar=False
 blood=100
 startroom(True)

@@ -7,6 +7,39 @@ import time #Suspense/To look nice
 #Functions
 def clearscreen(): #Clears output console
     os.system('cls' if os.name == 'nt' else 'clear')
+def strike(text): #Strikethrough
+    i = 0
+    new_text = ''
+    while i < len(text):
+        new_text = new_text + (text[i] + u'\u0336')
+        i = i + 1
+    return(new_text)
+def buy(item): #Buy thing from shop
+    clearscreen()
+    wound=r"""⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠈⢿⣷⣦⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢻⣷⡙⠻⣿⣦⣄⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⣀⣤⠆⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢻⣿⣆⠈⠻⠟⢻⣿⣿⣁⣀⣀⣠⣤⣶⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⣾⣿⣋⣤⣄⠀⠙⢿⣿⣿⡿⠿⣻⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠛⠋⠉⠛⢻⣿⣧⠀⠀⠉⠁⠀⣴⣿⣿⠀⠀⠀⢀⣀⡄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣸⣿⡿⠀⠀⠀⠀⠀⠸⣿⣿⣶⣶⣾⣿⠏⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⣾⣿⣯⣶⣾⣿⣿⣦⡀⠀⠈⠛⠛⣽⣿⡏⠀⠀⢀⠀⠀⠀⠀⠀
+⠀⠀⠀⣠⠾⠟⠛⠉⠉⠀⠀⠀⢹⣿⣷⠀⠀⠀⠀⠻⣿⣧⣤⣴⡇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣫⣴⣶⣤⡀⠀⠙⠿⠟⣿⡇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⡿⠿⠿⠿⢿⣿⣿⣆⠀⠀⠸⣿⣷⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⠋⠁⠀⠀⠀⠀⠀⠹⣿⣧⣶⣶⣤⡈⢿⣷⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠟⠛⠉⠉⠙⠻⣶⣽⣷⡀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⢷⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀"""
+    print(wound)
+    time.sleep(1)
+    print("A stinging pain enters your chest...")
+    time.sleep(1)
+    print("However...")
+    time.sleep(5)
+    clearscreen()
+    if item=="1":
+
 def intro(): #Takes name and consent
     print("Hello.")
     time.sleep(1)
@@ -290,7 +323,7 @@ def startroom(first,crowbar): #A tutorial of sorts
                     gameover(12113211, 43806818)
         else:
             print("Not sure what that means.")
-def livingroom(first): #Main room
+def livingroom(first,heart,hook,mass): #Main room
     clearscreen()
     if first==True:
         print("You enter a large, warmly lit living room.")
@@ -318,6 +351,12 @@ def livingroom(first): #Main room
     print(" 4. Check the guest room.")
     time.sleep(1)
     print(" 5. Stay by the fireplace.")
+    time.sleep(1)
+    if first==True:
+        print(" 6. Go back into the original room.")
+    else:
+        print(strike(" 6. Go back into the original room"))
+        print(" Attempt to go back into original room.")
     time.sleep(1)
     while True:
         decision=input(">")
@@ -368,7 +407,50 @@ def livingroom(first): #Main room
             print("   'Can be used as bait.'")
             print("2. Meat hook - 25 blood")
             print("   'Can be used to deter pests.'")
-            print("3. ")
+            print("3. Flesh Mass - 75 blood")
+            print("   'Deters pests easier and doesn't break.'")
+            time.sleep(1)
+            while True:
+                clearscreen()
+                print(friend)
+                print("Press N to leave shop any time.")
+                print("Your current blood level is "+blood+".")
+                time.sleep(2)
+                print()
+                print("1. Beating Heart - 10 blood")
+                print("   'Can be used as bait.'")
+                print("2. Meat hook - 25 blood")
+                print("   'Can be used to deter pests.'")
+                print("3. Flesh Mass - 75 blood")
+                print("   'Deters pests easier and doesn't break.'")
+                item=input(">")
+                if item==1 or item==2 or item==3:
+                    print("Are you sure?")
+                    time.sleep(1)
+                    while True:
+                        decision=input(">")
+                        if decision=="n".casefold():
+                            break
+                        elif decision=="y".casefold():
+                            if item=="1":
+                                if heart==True:
+                                    print("'You already have a beating heart.'")
+                                    time.sleep(3)
+                                    break
+                                else:
+                                    print("'I'll take your blood for it then.'")
+                                    time.sleep(3)
+                                    heart=buy(1)
+                                    time.sleep(7.5)
+                                    break
+
+                elif item=="n".casefold():
+                    print("'Fairwell, friend. I will be here until the end of time.'")
+                    time.sleep(3)
+                    livingroom(False,heart,hook,mass)
+                else:
+                    print("'I don't have that. Pick something I have.'")
+                    time.sleep(3)
         elif decision==2:
             print("Haiiii")
         elif decision=="4":
@@ -400,8 +482,9 @@ ___|______|____!.,.!,.!,!|d|MMMo * loMM|p|,!,.!.,.!..__|_____|_____
      .'   | .'   |/|  /                     \ |`!   |`.|    `.  |  
   _.'     !'|   .' | /                       \|  `  |  `.    |`.|  
 """
+            print(door)
             time.sleep(5)
-            livingroom(False)
+            livingroom(False,heart,hook,mass)
         else:
             print("Not sure what that means.")
 
@@ -410,6 +493,9 @@ clearscreen()
 name=intro()
 today=datetime.date.today()
 menu()
+heart=False
+hook=False
+mass=False
 crowbar=False
 blood=100
 startroom(True,False)

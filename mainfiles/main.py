@@ -14,7 +14,7 @@ def strike(text): #Strikethrough
         new_text = new_text + (text[i] + u'\u0336')
         i = i + 1
     return(new_text)
-def buy(item): #Buy thing from shop
+def buy(item,blood): #Buy thing from shop
     clearscreen()
     wound=r"""⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠈⢿⣷⣦⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -39,7 +39,97 @@ def buy(item): #Buy thing from shop
     time.sleep(5)
     clearscreen()
     if item=="1":
-
+        print("You obtained [BEATING HEART]")
+        time.sleep(0.5)
+        itemart=r"""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣶⣧⣰⣿⣿⠇⣼⣿⢻⣶⢴⠶⢦⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⠟⢙⣿⣿⢣⢹⣿⡆⢰⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⡿⠙⢹⠗⣪⣿⣧⣾⣧⣾⣿⣧⠈⠻⣄⠀⠀⠀⠀⢀⣀⡀⠀
+⠀⠀⠀⠀⠀⠀⢰⣇⢰⢏⠎⡴⣻⡿⠟⠉⠙⠋⣑⣆⠀⠈⠙⡶⠖⢺⣏⣽⣿⡆
+⠀⠀⠀⠀⠀⠀⣿⣥⡏⢨⢸⣿⣿⡁⠀⠀⣤⣾⣿⣿⣿⣶⣦⣷⢶⣾⡿⠟⠛⠁
+⠀⠀⠀⠀⠀⢸⣿⡟⢿⠯⣸⣿⡿⠠⠂⣾⡿⠟⠋⠁⠀⠀⠀⠉⠉⠉⠉⢹⣷⡀
+⠀⠀⠀⠀⠀⢸⣿⣷⣰⣄⣿⣿⡗⠀⣤⣿⠃⠀⡀⣠⣖⣉⣵⡦⢀⣀⠀⢸⣏⡇
+⠀⠀⢀⣴⠋⠉⠉⠩⠿⣿⡿⣿⣿⣿⡿⠃⡠⠞⣱⣿⣿⠟⠛⠻⣿⣿⣷⣾⣷⣷
+⠀⠀⡼⣧⠆⠀⠀⠀⠀⣸⣿⣿⡟⠉⢀⣞⡴⢎⣿⣿⠓⠊⡹⣃⢙⣿⣿⣿⣛⠛
+⠀⣼⣃⣯⠖⠁⢀⣤⣴⣿⡿⢏⡦⠊⠉⣿⣴⣿⢻⡈⣠⣧⢃⢣⣿⣧⢻⣿⣿⠃
+⢸⣳⣏⣸⣿⣾⣿⣿⣿⣯⡀⢾⡁⠀⠀⠈⠉⠛⡿⣿⣯⣨⡷⢼⡿⠻⣿⠆⠉⠀
+⢸⣾⢠⣿⣽⣾⣿⡥⠿⣿⣋⠓⠋⠦⠀⢀⢸⠀⣱⣿⣿⣿⡳⣾⣤⣀⣿⠀⠀⠀
+⠸⣿⣷⣿⣿⣿⣿⣦⣤⣀⠘⢧⠤⠴⠞⣻⡶⢾⣿⣿⣿⠲⡏⢻⣿⣿⣿⠀⠀⠀
+⠀⢻⣭⣿⣿⣿⡿⣿⣿⣽⡢⠄⡀⠀⢘⡟⢠⣿⡹⣿⣿⠀⠳⢸⢸⢹⡏⠀⠀⠀
+⠀⠈⢻⣿⣸⣿⠯⠿⠿⡦⣻⡢⣄⠖⡩⠔⣿⣯⣿⢿⣟⠳⠄⡜⣻⣿⡇⠀⠀⠀
+⠀⠀⢿⣿⣿⣿⠀⠀⠐⢸⢿⣷⡈⢁⡤⣾⣿⣿⡿⣿⣿⢷⣄⣁⠇⣿⡇⠀⠀⠀
+⠀⠀⠘⣿⣿⣿⣷⣷⣀⢸⠻⣦⣁⡞⣰⣿⣿⣿⣹⣟⢹⣦⠘⠟⣴⣿⠇⠀⠀⠀
+⠀⠀⠀⠹⣿⡿⣿⣍⢿⡟⢆⠉⠚⣰⣿⣿⣷⡸⡏⣿⡀⢷⣧⣰⢃⡿⠀⠀⠀⠀
+⠀⠀⠀⠀⠙⣷⣌⢻⡳⡿⣾⣤⡞⢹⣿⠇⣸⡇⣹⡏⠀⢘⣷⣿⡾⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠻⣿⣿⣄⣀⣹⢧⣿⣿⡆⠼⢡⢿⡇⠀⡿⣹⡿⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⢿⣟⡦⣟⣻⣿⡡⣿⡆⣾⠸⣳⢀⣧⡿⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⢿⣶⣿⣧⣹⢯⣷⣣⡼⣵⣻⣲⠃⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣹⣽⡞⡃⣾⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⣛⡛⠛⡋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"""
+        print(itemart)
+        blood=blood-10
+        heart=True
+        time.sleep(2)
+        print("This can be used to bait creatures.")
+        return(True,blood)
+    elif item=="2":
+        print("You obtained [MEAT HOOK]")
+        time.sleep(0.5)
+        itemart=r"""⠀⢤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠙⢿⣦⡈⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠰⣄⡉⢁⣤⡈⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠈⠳⣄⠙⢿⣦⡀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣦⠈⠢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠰⣄⠙⢀⣤⡈⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⢄⠙⢿⣦⡀⠰⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠙⢿⣦⡈⢻⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣷⣄⠙⣡⣾⣷⣦⣤⣀⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠛⠋⠉⠉⠉⠛⠛⠿⣿⣶⣦⣤⡄⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⡇⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢄⡀⠀⠀⠀⠀⠀⠀⢹⣿⡇⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣷⠆⠀⠀⠀⣠⣾⣿⡇⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣶⣶⣿⣿⡏⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀"""
+        print(itemart)
+        blood=blood-25
+        heart=True
+        time.sleep(2)
+        print("This can be used to fend off hostile creatures..")
+        return(True,blood)
+    elif item=="2":
+        print("You obtained [FLESH MASS]")
+        time.sleep(0.5)
+        itemart=r"""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣾⣿⣯⣭⣽⣿⣿⣿⣿⣶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣾⣿⣽⣿⣿⣿⣿⣟⣿⣿⣿⣿⣟⢿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⡿⠉⠻⣿⣿⣿⣿⣿⣿⣟⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠘⣿⣷⢻⣿⣿⣿⡽⣿⢿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡏⣿⣿⣿⣿⣿⡟⠀⢀⣀⡀⠀⠘⣿⡟⣿⣿⣼⣿⣻⣛⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⡿⢠⣶⣿⣿⣿⣿⡄⢹⣿⣿⣿⣿⣿⣿⣷⣿⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢠⣿⣻⣿⣿⣿⣿⣿⣿⡇⣻⣿⣿⣿⣿⣿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣾⣿⣿⡇⠹⣿⣿⣿⣿⣿⡏⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠈⠙⠛⠋⠁⠀⣾⣿⣿⣿⢫⣿⣿⣿⢹⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢼⣿⣿⣿⣿⣽⣿⣿⣿⣿⣷⡀⠀⢀⣾⣿⣿⣿⣿⣿⣷⣯⣿⣿⣎⣿⣯⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣷⣤⣿⣿⣿⣿⣿⣿⣿⣿⡧⣿⢻⣾⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣏⣿⣿⣿⣿⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣁⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣧⣿⣟⣿⡏⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⢿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⡿⠏⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠈⠻⣿⣾⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣻⣿⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⢿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣷⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠁⠀⠀⠀"""
+        print(itemart)
+        blood=blood-75
+        heart=True
+        time.sleep(2)
+        print("This will protect you from hostile creatures.")
+        return(True,blood)
 def intro(): #Takes name and consent
     print("Hello.")
     time.sleep(1)
@@ -234,7 +324,7 @@ def startroom(first,crowbar): #A tutorial of sorts
                 time.sleep(1)
                 print("Barely, though. The crowbar breaks in use.")
                 time.sleep(3)
-                livingroom(True)
+                livingroom(True,blood,False,False,False)
             else:
                 print("It's locked from the outside. I need a tool to open it.")
                 time.sleep(3)
@@ -323,7 +413,7 @@ def startroom(first,crowbar): #A tutorial of sorts
                     gameover(12113211, 43806818)
         else:
             print("Not sure what that means.")
-def livingroom(first,heart,hook,mass): #Main room
+def livingroom(first,blood,heart,hook,mass): #Main room
     clearscreen()
     if first==True:
         print("You enter a large, warmly lit living room.")
@@ -360,7 +450,7 @@ def livingroom(first,heart,hook,mass): #Main room
     time.sleep(1)
     while True:
         decision=input(">")
-        if decision=="1": #Shop
+        if decision=="1": #Shop/'Friend'
             print("You approach the creature on the couch.")
             time.sleep(2)
             clearscreen()
@@ -440,10 +530,31 @@ def livingroom(first,heart,hook,mass): #Main room
                                 else:
                                     print("'I'll take your blood for it then.'")
                                     time.sleep(3)
-                                    heart=buy(1)
+                                    heart=buy(1,blood)
                                     time.sleep(7.5)
                                     break
-
+                            elif item=="2":
+                                if hook==True:
+                                    print("'You already have a meat hook.'")
+                                    time.sleep(3)
+                                    break
+                                else:
+                                    print("'I'll take your blood for it then.'")
+                                    time.sleep(3)
+                                    heart=buy(2,blood)
+                                    time.sleep(7.5)
+                                    break
+                            elif item=="3":
+                                if mass==True:
+                                    print("'You already have a flesh mass.'")
+                                    time.sleep(3)
+                                    break
+                                else:
+                                    print("'I'll take your blood for it then.'")
+                                    time.sleep(3)
+                                    heart=buy(3,blood)
+                                    time.sleep(7.5)
+                                    break
                 elif item=="n".casefold():
                     print("'Fairwell, friend. I will be here until the end of time.'")
                     time.sleep(3)
@@ -484,7 +595,7 @@ ___|______|____!.,.!,.!,!|d|MMMo * loMM|p|,!,.!.,.!..__|_____|_____
 """
             print(door)
             time.sleep(5)
-            livingroom(False,heart,hook,mass)
+            livingroom(False,blood,heart,hook,mass)
         else:
             print("Not sure what that means.")
 

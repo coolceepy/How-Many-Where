@@ -95,7 +95,7 @@ def buy(item): #Buy thing from shop
         time.sleep(2)
         print("This can be used to fend off hostile creatures..")
         time.sleep(7.5)
-    elif item==3:
+    else:
         print("You obtained [FLESH MASS]")
         time.sleep(0.5)
         itemart=r"""
@@ -412,7 +412,7 @@ def startroom(first,crowbar): #A tutorial of sorts
                     gameover(12113211, 43806818)
         else:
             print("Not sure what that means.")
-def livingroom(first,blood,heart,hook,mass): #Main room !UNFININISHED!
+def livingroom(first,blood,heart,hook,mass,attempted): #Main room !UNFININISHED!
     clearscreen()
     int(blood)
     if first==True:
@@ -442,7 +442,7 @@ def livingroom(first,blood,heart,hook,mass): #Main room !UNFININISHED!
     time.sleep(1)
     print(" 5. Stay by the fireplace.")
     time.sleep(1)
-    if first==True:
+    if attempted:
         print(" 6. Go back into the original room.")
     else:
         print(strike(" 6. Go back into the original room"))
@@ -604,8 +604,8 @@ ___|______|____!.,.!,.!,!|d|MMMo * loMM|p|,!,.!.,.!..__|_____|_____
 """
             print(door)
             time.sleep(5)
-            livingroom(False,str(blood),heart,hook,mass)
-        else:
+            livingroom(False,str(blood),heart,hook,mass,True)
+        else: #Failsafe
             print("Not sure what that means.")
 
 # Everything below here is where the actual game is

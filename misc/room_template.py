@@ -1,6 +1,4 @@
 import os #Ignore these
-import random
-import datetime
 import time
 def clearscreen(): #And this
     os.system('cls' if os.name == 'nt' else 'clear')
